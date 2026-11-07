@@ -27,6 +27,11 @@ jobs:
       - name: Install declared environment
         shell: pwsh
         run: |
+          # Process-interruption tests launch sys._base_executable and pass only
+          # the checkout on PYTHONPATH. Keep that runner interpreter supplied
+          # with the same declared dependencies as the project venv.
+          python -m pip install -c requirements-windows-py311.lock -e '.[dev]'
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python -m venv .venv
           .\.venv\Scripts\python.exe -m pip install -c requirements-windows-py311.lock -e '.[dev]'
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
