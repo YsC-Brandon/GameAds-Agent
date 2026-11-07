@@ -4,7 +4,7 @@ GameAds-Agent is a Windows-local demonstration for synthetic game-ad campaign an
 
 **This is not an advertising integration or production service.** It does not place ads, change a budget on a platform, authenticate approvers, or support network/multi-user deployment. Use synthetic data only.
 
-> **Publication status:** the public repository is [YsC-Brandon/GameAds-Agent](https://github.com/YsC-Brandon/GameAds-Agent). Original project code, documentation, the generator and synthetic CSVs are released under the [MIT License](LICENSE), copyright (c) 2026 YsC-Brandon. Remote CI is configured and its result is recorded in [release status](docs/release-status.md).
+> **Publication status:** the public repository is [YsC-Brandon/GameAds-Agent](https://github.com/YsC-Brandon/GameAds-Agent). Original project code, documentation, the generator and synthetic CSVs are released under the [MIT License](LICENSE), copyright (c) 2026 YsC-Brandon. [Windows/Python 3.11 CI passed](https://github.com/YsC-Brandon/GameAds-Agent/actions/runs/42369679971) on `0d7d02c`: 1,344 passed, 2 private-history tests deselected. See [release status](docs/release-status.md) for evidence and engineering limits.
 
 ## Current Engineering Status
 

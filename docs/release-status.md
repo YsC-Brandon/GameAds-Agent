@@ -37,10 +37,11 @@ The current allowlist and review disposition are in [public-file-manifest.md](ge
 | Initial commit / push | `e4865a006898c607817ffc27e87e94ae1599797f` pushed to public `main`, containing 133 reviewed files |
 | Current public scope | 134 reviewed text/empty-placeholder files, including LICENSE and added CSV checkout attributes; all unlisted/private files excluded |
 | Project license | MIT; see `LICENSE` and package metadata |
-| Remote CI | Three completed failed runs, detailed below; CSV checkout correction awaiting remote verification |
+| Remote CI | PASS on `0d7d02ce15e0b7d9ab7abe2022ecc596a9e7847e`: [run 42369679971](https://github.com/YsC-Brandon/GameAds-Agent/actions/runs/42369679971), Windows/Python 3.11; 1,344 passed, 2 deselected |
 | Public CI configuration | Windows, Python 3.11, `main` pushes, pull requests and manual dispatch; read-only permissions, pinned action commits, no persisted checkout credential |
 | New validator checks | Seven new focused tests passed; existing JUnit runtime data validates 36 schemas / 14 samples; not a fresh application run |
 | Earlier candidate-only collection | 132-file copy, with private files absent: 1,344 / 1,346 tests collected, exactly two private-history tests deselected; collection only, not a full test or clean-install result |
+| Current candidate-only collection | Committed 134-file source archive, private files absent: 1,344 / 1,346 collected, 2 deselected, using the existing venv; collection only |
 | Static checks | Existing environment pip check, Ruff lint/format, Python parsing, workflow/Issue YAML, PowerShell parsing and candidate-relative Markdown links passed |
 
 Only the two existing private-history byte-identity tests are deselected by
@@ -61,6 +62,15 @@ this discrepancy is not resolved by changing either date.
 | [1](https://github.com/YsC-Brandon/GameAds-Agent/actions/runs/42361098881) | `e4865a0` | 63 failed, 1,281 passed, 2 deselected; process-child startup failures |
 | [2](https://github.com/YsC-Brandon/GameAds-Agent/actions/runs/42361790918) | `67df4cf` | 2 failed, 1,342 passed, 2 deselected after supplying base-interpreter dependencies |
 | [3](https://github.com/YsC-Brandon/GameAds-Agent/actions/runs/42362519286) | `e4812a1` | 1 failed, 1,343 passed, 2 deselected after enabling Python UTF-8 mode; CSV LF/CRLF byte mismatch remained |
+| [4](https://github.com/YsC-Brandon/GameAds-Agent/actions/runs/42369679971) | `0d7d02ce15e0b7d9ab7abe2022ecc596a9e7847e` | PASS: 1,344 passed, 2 deselected in 280.47 seconds; all six public checks exited 0 |
+
+Run 4 completed at **2026-11-07T11:54:15Z**. It installed the pinned declared
+environment on a fresh GitHub-hosted Windows/Python 3.11 runner and checked out
+the public source. Dependency consistency, Ruff lint/format, compilation, pytest
+and runtime OpenAPI validation passed. The runtime validator checked **36 schemas
+and 14 samples**; frozen-contract comparison remained explicitly NOT RUN and
+Phase 4 remained NOT ACCEPTED. This result is distinct from the earlier local
+regression and the standalone tutorial, which were not rerun.
 
 The original tests, assertions and two-test deselection list are unchanged.
 The CI base interpreter and venv now receive the same pinned environment;
@@ -69,8 +79,16 @@ synthetic CSVs to LF on checkout, matching the unchanged deterministic generator
 The original local full regression and tutorial were not rerun. Focused local
 diagnostics ran the seven public-validator tests, one backup interruption case
 and the CLI case (including the unsuccessful IO-encoding-only experiment).
+Both CSV byte-identity tests also passed individually after the checkout fix;
+a Windows `core.autocrlf=true` checkout simulation matched both Git blobs and
+the generator output byte for byte.
 
-Publication is complete; a successful remote CI result remains to be verified.
+Publication and remote CI verification are complete for the tested commit above.
+GitHub reports the repository as public and identifies its license as MIT.
+The 134-file allowlist, public Markdown links and published-history path scope
+were checked; excluded private material remains outside the repository history.
+Subsequent documentation-only commits have their own automatically triggered
+workflow results on the repository's Actions page.
 
 No application behavior, dependency versions, Phase 4 contract or acceptance standard
 was changed for publication. No tagged GitHub Release or package-registry release

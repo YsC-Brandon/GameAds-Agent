@@ -2,7 +2,7 @@
 
 Scope: all 68 version pins in `requirements-windows-py311.lock`, read from the existing local development environment. No dependencies were upgraded, downloaded, vendored or relicensed for this inventory. Installed versions matched every listed pin. This is metadata evidence, not an exhaustive legal, provenance, native-component or vulnerability audit.
 
-The source-only public scope does not include wheels, installed distributions, bundled native binaries or copied third-party artwork. Dependencies retain their own licenses; the planned project MIT license would not replace them. A binary/wheel redistribution needs its own artifact-specific license/NOTICE review before release.
+The source-only public scope does not include wheels, installed distributions, bundled native binaries or copied third-party artwork. Dependencies retain their own licenses; the project MIT license does not replace them. A binary/wheel redistribution needs its own artifact-specific license/NOTICE review before release.
 
 License labels below are preserved from installed `License-Expression`, license classifiers, or short `License` metadata (in that order). A broad label such as BSD License does not identify a precise SPDX variant. Counts cover distribution files whose names contain license/notice, not all possible legal material. Zero does not imply that no license applies.
 
