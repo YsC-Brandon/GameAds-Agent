@@ -1,6 +1,6 @@
 # Exact-Scope File Security Review
 
-Session date: 2026-11-05. Publication, commit/push and CI are authorized. Original project material and synthetic CSVs are released under the [MIT License](../../LICENSE), copyright (c) 2026 YsC-Brandon. This review is bounded content screening, not legal clearance or an exhaustive secret audit. The local `.env` was not opened or copied.
+Session date: 2026-11-05; GitHub run timestamps are recorded separately in release status. Publication, commit/push and CI are authorized. Original project material and synthetic CSVs are released under the [MIT License](../../../LICENSE), copyright (c) 2026 YsC-Brandon. This review is bounded content screening, not legal clearance or an exhaustive secret audit. The local `.env` was not opened or copied.
 
 ## Reviewed Content and Rights Boundary
 
@@ -26,15 +26,15 @@ Session date: 2026-11-05. Publication, commit/push and CI are authorized. Origin
 
 ## Scope Limits
 
-The exact list contains 133 text/empty-placeholder files and is staged locally,
-with no commit or upload at the time of this review. A candidate-only copy collected 1,344 of 1,346 tests
+The exact public list now contains 134 text/empty-placeholder files, including
+LICENSE and CSV checkout attributes. The earlier 132-file candidate-only copy collected 1,344 of 1,346 tests
 (exactly two private-history checks deselected); collection did not execute test
 bodies and used the existing venv, not a new install. The new seven validator tests
 are separate from the original 1,339-pass historical run. Public-relative Markdown
 links resolve inside the allowlist; excluded SVG/internal-document links were removed.
 
 Pattern screening and per-file text/type review are not an exhaustive PII, entropy,
-malware, code provenance or supply-chain audit. There is no prior Git history to
-scan. The historical 826-file and 18-document scans are not represented as current
+malware, code provenance or supply-chain audit. There was no prior Git history at
+the initial review. The historical 826-file and 18-document scans are not represented as current
 exact-scope proof. Final eligible paths are enumerated in
 [the manifest](public-file-manifest.md); a modified index requires renewed byte review.

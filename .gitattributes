@@ -1,0 +1,3 @@
+# Preserve deterministic dataset bytes on Windows as well as other platforms.
+/data/sample_campaigns.csv text eol=lf
+/app/resources/sample_campaigns.csv text eol=lf

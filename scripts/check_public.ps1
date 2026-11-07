@@ -42,6 +42,12 @@ try {
             Get-Content -LiteralPath (Join-Path $evidence ($check.Name + '.stderr.log')) -Tail 60
             break
         }
+        if ($check.Name -eq 'pytest-public') {
+            Get-Content -LiteralPath (Join-Path $evidence ($check.Name + '.stdout.log')) -Tail 2
+        }
+        if ($check.Name -eq 'openapi-runtime') {
+            Get-Content -LiteralPath (Join-Path $evidence ($check.Name + '.stdout.log'))
+        }
     }
     $results | ConvertTo-Json -Depth 4 | Out-File -LiteralPath (Join-Path $evidence 'results.json') -Encoding utf8
     if ($results.Count -ne $checks.Count -or @($results | Where-Object exit_code -ne 0).Count -ne 0) { exit 1 }

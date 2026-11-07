@@ -1,6 +1,6 @@
 # Exact Reviewed Public-Source Scope
 
-This is the exact reviewed public-source scope. The project is released under the [MIT License](../../LICENSE), copyright (c) 2026 YsC-Brandon. The scope contains only reviewed text or empty-placeholder files; no general `git add .` was used.
+This is the exact reviewed public-source scope. The project is released under the [MIT License](../../../LICENSE), copyright (c) 2026 YsC-Brandon. The scope contains only reviewed text or empty-placeholder files; no general `git add .` was used.
 
 ## Disposition
 
@@ -16,6 +16,7 @@ This is the exact reviewed public-source scope. The project is released under th
 
 ```text
 .env.example
+.gitattributes
 .github/ISSUE_TEMPLATE/bug_report.yml
 .github/PULL_REQUEST_TEMPLATE.md
 .github/workflows/local-checks.yml
@@ -150,4 +151,4 @@ tests/unit/test_provider.py
 tests/unit/test_public_openapi.py
 ```
 
-Total: **133 files**. When this scope changes, repeat index, content, link and source-only collection checks.
+Total: **134 files**. The added `.gitattributes` preserves the two deterministic CSVs as LF on checkout. When this scope changes, repeat index, content, link and source-only collection checks.

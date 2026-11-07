@@ -28,9 +28,12 @@ The complete budget-demo workflow uses an explicitly initialized **new candidate
 
 ## Windows Quick Start
 
-Requirements: Windows, Python 3.11, Git, and network access to download Python packages. A public clone URL cannot yet be supplied. Open PowerShell in the authorized source directory; commands below are repository-relative and do not depend on a particular drive:
+Requirements: Windows, Python 3.11, Git, and network access to download Python packages. Clone the public repository, then run the repository-relative commands in PowerShell:
 
 ```powershell
+git clone https://github.com/YsC-Brandon/GameAds-Agent.git
+Set-Location GameAds-Agent
+$env:PYTHONUTF8 = '1'
 py -3.11 -m venv .venv
 & .\.venv\Scripts\python.exe -m pip install -c requirements-windows-py311.lock -e '.[dev]'
 & .\.venv\Scripts\python.exe -m pip check
@@ -118,7 +121,7 @@ Install development dependencies and run the documented local checks from the re
 .\scripts\check_public.ps1 -EvidenceDir 'docs\generated\my-unique-local-run'
 ```
 
-The second command runs dependency consistency, Ruff, compilation, public-source pytest, and runtime OpenAPI/sample validation. It explicitly deselects only two unchanged private-history byte-identity tests in `tests/phase3/test_guards.py`, because their private archives are excluded. It does not compare the private frozen OpenAPI contract and is not the internal acceptance pipeline. The internal scripts/tests/contracts remain unchanged. Do not overwrite earlier evidence directories. GitHub Actions is configured for pushes to `main`, pull requests and manual dispatch on Windows/Python 3.11; no remote run has occurred.
+The second command runs dependency consistency, Ruff, compilation, public-source pytest, and runtime OpenAPI/sample validation. It explicitly deselects only two unchanged private-history byte-identity tests in `tests/phase3/test_guards.py`, because their private archives are excluded. It does not compare the private frozen OpenAPI contract and is not the internal acceptance pipeline. The internal scripts/tests/contracts remain unchanged. Do not overwrite earlier evidence directories. GitHub Actions runs on pushes to `main`, pull requests and manual dispatch on Windows/Python 3.11; see [release status](docs/release-status.md) for recorded run results. The CI runner installs the same pinned environment in both its base interpreter and `.venv`, because process-interruption tests intentionally launch `sys._base_executable`. Local test runs need those base-interpreter dependencies too; use a dedicated Python installation for that purpose. Enable `PYTHONUTF8=1` for consistent parent/child text encoding. `.gitattributes` preserves deterministic CSV bytes across Windows checkouts.
 
 ## Security, Data, and Licensing
 
